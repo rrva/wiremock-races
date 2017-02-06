@@ -47,7 +47,8 @@ public class HelloControllerTest {
 
         sendTwoRequestsInParallel();
 
-        Thread.sleep(1000);
+        // Sleeping here affects the number of received calls to wiremock.
+        //Thread.sleep(1000);
 
         wireMock.verify(2, getRequestedFor(urlMatching("/hello")));
 
